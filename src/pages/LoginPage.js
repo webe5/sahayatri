@@ -1,93 +1,51 @@
 import React from "react";
-
+import leftImage from "../login-left.jpg"; 
 const LoginPage = ({ onLogin }) => {
   return (
-    <div className="lp-wrapper">
-      <div className="lp-card">
-        {/* LEFT SIDE */}
-        <div className="lp-left">
-          <div className="lp-logo-row">
-            <div className="lp-logo-circle">SY</div>
-            <span className="lp-logo-text">SahaYatri Admin</span>
-          </div>
+    <div className="gov-light-login-page">
+      <div className="gov-light-login-card">
+        {/* LEFT SIDE IMAGE PANEL */}
+        <div className="gov-light-left">
+          <img src={leftImage} alt="Welcome" className="gov-light-left-img" />
 
-          <h1 className="lp-title">Admin Login</h1>
-
-          <div className="lp-underline" />
-
-          <p className="lp-body">
-            Sign in with your official Jharkhand Tourism credentials to access
-            the admin console for tourism operations, guides, vendors and SOS.
-          </p>
-
-          <p className="lp-subtext">
-            For security, this portal is monitored and all access is logged.
-            Use your work email address only.
-          </p>
-
-          <form
-            className="lp-login-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (onLogin) onLogin();
-            }}
-          >
-            <label className="lp-login-label">
-              Email
-              <input
-                type="email"
-                required
-                placeholder="admin@jharkhand.gov"
-                className="lp-login-input"
-              />
-            </label>
-
-            <label className="lp-login-label">
-              One Time Password
-              <input
-                type="password"
-                required
-                placeholder="Enter OTP"
-                className="lp-login-input"
-              />
-            </label>
-
-            <div className="lp-login-meta">
-              <label className="lp-login-remember">
-                <input type="checkbox" /> Remember this device
-              </label>
-              <button type="button" className="text-link">
-                View session logs
-              </button>
-            </div>
-
-            <button type="submit" className="lp-subscribe-btn lp-login-btn">
-              Sign in to console
-            </button>
-
-            <p className="lp-login-footnote">
-              Multi factor authentication and role based access can be managed
-              from system settings after login.
+          <div className="gov-light-left-text">
+            <h2>Welcome Back</h2>
+            <p>
+              Please sign in using your official Jharkhand Tourism admin
+              credentials to continue.
             </p>
-          </form>
+          </div>
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="lp-right lp-right-login">
-          <div className="lp-right-inner">
-            <div className="lp-welcome-text-top">Secure Access</div>
-            <div className="lp-welcome-main">
-              <span className="lp-letter">L</span>
-              <span className="lp-letter">O</span>
-              <span className="lp-letter">G</span>
-              <span className="lp-letter">I</span>
-              <span className="lp-letter">N</span>
-            </div>
-            <div className="lp-welcome-caption">
-              Only verified administrators can sign in. Keep your credentials
-              confidential and follow internal security guidelines.
-            </div>
-          </div>
+        {/* RIGHT SIDE LOGIN FORM */}
+        <div className="gov-light-right">
+          <h2 className="gov-light-login-title">Login</h2>
+
+          <form
+            className="gov-light-login-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              onLogin();
+            }}
+          >
+            <label>Email</label>
+            <input type="email" required placeholder="admin@jharkhand.gov" />
+
+            <label>Password</label>
+            <input type="password" required placeholder="Enter password" />
+
+            <button type="button" className="gov-light-forgot">
+              Forgot password?
+            </button>
+
+            <button type="submit" className="gov-light-login-btn">
+              Log In
+            </button>
+
+            <p className="gov-light-footer">
+              Need access? <span className="gov-light-link">Request admin ID</span>
+            </p>
+          </form>
         </div>
       </div>
     </div>

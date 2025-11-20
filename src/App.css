@@ -688,293 +688,471 @@ body {
     grid-template-columns: 1fr;
   }
 }
-/* ======= WELCOME LANDING (MATCHING REFERENCE) ======= */
+/* ==== SIMPLE GOVERNMENT-STYLE WELCOME HERO ==== */
 
-.lp-wrapper {
+.wp-wrapper {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Top bar */
+
+.wp-topbar {
+  height: 64px;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.wp-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wp-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #facc15;
+  color: #111827;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 16px;
-  background: radial-gradient(circle at top left, #8e9dff 0, #4e54c8 35%, #292b5a 100%);
+  font-weight: 700;
+  font-size: 14px;
 }
 
-.lp-card {
-  width: 100%;
-  max-width: 980px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-  display: flex;
-  overflow: hidden;
-}
-
-/* LEFT SIDE */
-
-.lp-left {
-  flex: 1;
-  padding: 40px 40px 32px;
-  background: #ffffff;
+.wp-brand-text {
   display: flex;
   flex-direction: column;
 }
 
-.lp-logo-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.lp-logo-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffb347, #ff6f61);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-right: 10px;
-}
-
-.lp-logo-text {
-  font-size: 14px;
+.wp-brand-title {
+  font-size: 15px;
   font-weight: 600;
-  color: #33344a;
 }
 
-.lp-title {
-  margin: 0;
-  font-size: 28px;
-  line-height: 1.2;
-  color: #3b2b62;
+.wp-brand-subtitle {
+  font-size: 11px;
+  color: #cbd5f5;
 }
 
-.lp-underline {
-  width: 60px;
-  height: 3px;
-  border-radius: 999px;
-  background: #1dd1a1;
-  margin-top: 14px;
-  margin-bottom: 16px;
-}
-
-.lp-body {
-  margin: 0;
-  font-size: 14px;
-  color: #555a70;
-  max-width: 420px;
-}
-
-.lp-subtext {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #8b90a2;
-  max-width: 420px;
-}
-
-.lp-form {
-  margin-top: 22px;
+.wp-topbar-right {
   display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wp-topbar-link {
+  border: none;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.wp-topbar-cta {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+/* Hero */
+
+.wp-hero {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Replace the URL below with your own Jharkhand image if you have one */
+.wp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.2)),
+    url("./hero.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.96);
+}
+
+.wp-hero-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 40px 40px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 40px;
+}
+
+/* Left content */
+
+.wp-hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+}
+
+.wp-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #bfdbfe;
+  margin: 0 0 10px;
+}
+
+.wp-heading {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.wp-lead {
+  margin-top: 14px;
+  font-size: 14px;
+  max-width: 460px;
+  color: #e5e7eb;
+}
+
+.wp-primary-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #facc15;
+  color: #111827;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.wp-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+/* Right side: search + quick links */
+
+.wp-hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.wp-search-label {
+  width: 100%;
+  max-width: 420px;
+  font-size: 12px;
+  color: #d1d5db;
+}
+
+.wp-search-label span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.wp-search-box {
+  display: flex;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  overflow: hidden;
+}
+
+.wp-search-box input {
+  flex: 1;
+  border: none;
+  padding: 8px 12px;
+  font-size: 13px;
+  background: transparent;
+  color: #f9fafb;
+}
+
+.wp-search-box input:focus {
+  outline: none;
+}
+
+.wp-search-box button {
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  background: #facc15;
+  color: #111827;
+  cursor: pointer;
+}
+
+.wp-quick-links {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   max-width: 420px;
 }
 
-.lp-input {
-  flex: 1;
-  padding: 10px 12px;
-  border-radius: 4px;
-  border: 1px solid #d5d7e0;
-  font-size: 13px;
-}
-
-.lp-input:focus {
-  outline: none;
-  border-color: #6c5ce7;
-  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.16);
-}
-
-.lp-subscribe-btn {
-  padding: 10px 18px;
-  border-radius: 4px;
-  border: none;
-  background: #5e2ca5;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out;
-}
-
-.lp-subscribe-btn:hover {
-  background: #4b1e88;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(75, 30, 136, 0.3);
-}
-
-/* RIGHT SIDE */
-
-.lp-right {
-  flex: 1;
-  position: relative;
-  background: #4d1d8a;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lp-right::before,
-.lp-right::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: #1dd1a1;
-  opacity: 0.9;
-}
-
-.lp-right::before {
-  width: 260px;
-  height: 260px;
-  top: -80px;
-  right: -40px;
-}
-
-.lp-right::after {
-  width: 220px;
-  height: 220px;
-  bottom: -90px;
-  left: -40px;
-  background: #0abde3;
-}
-
-.lp-right-inner {
-  position: relative;
-  z-index: 1;
-  width: 80%;
-  max-width: 320px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.lp-welcome-text-top {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  opacity: 0.8;
-}
-
-.lp-welcome-main {
-  margin-top: 18px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px;
-}
-
-.lp-letter {
-  font-size: 30px;
-  font-weight: 800;
-  padding: 4px 6px;
-  color: #ffffff;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
-}
-
-.lp-welcome-caption {
-  margin-top: 10px;
+.wp-quick-link {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 6px 12px;
   font-size: 12px;
-  opacity: 0.85;
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.wp-footer {
+  padding: 10px 40px 16px;
+  font-size: 11px;
+  color: #9ca3af;
+  background: rgba(15, 23, 42, 0.95);
 }
 
 /* Responsive */
 
 @media (max-width: 900px) {
-  .lp-card {
-    flex-direction: column;
-    max-width: 640px;
+  .wp-hero-overlay {
+    grid-template-columns: 1fr;
+    padding: 28px 24px 18px;
   }
 
-  .lp-right {
-    min-height: 220px;
-  }
-
-  .lp-left {
-    padding: 28px 24px 24px;
+  .wp-hero-right {
+    align-items: flex-start;
+    margin-top: 10px;
   }
 }
 
-@media (max-width: 520px) {
-  .lp-form {
-    flex-direction: column;
+@media (max-width: 640px) {
+  .wp-topbar {
+    padding: 10px 16px;
   }
 
-  .lp-wrapper {
-    padding: 16px;
+  .wp-hero-overlay {
+    padding: 22px 16px 16px;
+  }
+
+  .wp-heading {
+    font-size: 28px;
   }
 }
-/* ==== LOGIN PAGE REUSE OF LANDING DESIGN ==== */
 
-.lp-login-form {
-  margin-top: 22px;
+/* ============================================================
+   LIGHT GOVERNMENT LOGIN PAGE (WHITE & PALE BLUE THEME)
+   ============================================================ */
+
+.gov-light-login-page {
+  min-height: 100vh;
+  background: #f2f5fa; /* pale clean background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+}
+
+.gov-light-login-card {
+  width: 900px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* LEFT IMAGE PANEL */
+
+.gov-light-left {
+  position: relative;
+  background: #eef2f5;
+}
+
+.gov-light-left-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.gov-light-left-text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 20px;
+  color: #ffffff;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.gov-light-left-text h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.gov-light-left-text p {
+  margin-top: 8px;
+  font-size: 14px;
+  max-width: 280px;
+}
+
+/* RIGHT SIDE FORM */
+
+.gov-light-right {
+  padding: 40px 45px;
+  background: #ffffff;
+}
+
+.gov-light-login-title {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0a1a2f;
+}
+
+.gov-light-login-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 420px;
 }
 
-.lp-login-label {
-  font-size: 12px;
-  color: #6b7280;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.lp-login-input {
-  padding: 9px 11px;
-  border-radius: 4px;
-  border: 1px solid #d5d7e0;
+.gov-light-login-form label {
   font-size: 13px;
+  color: #444a55;
+  margin-bottom: -4px;
 }
 
-.lp-login-input:focus {
+.gov-light-login-form input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccd2da;
+  border-radius: 6px;
+  background: #f9fbff;
+}
+
+.gov-light-login-form input:focus {
   outline: none;
-  border-color: #6c5ce7;
-  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.16);
+  border-color: #2b8cff;
+  box-shadow: 0 0 0 2px rgba(43, 140, 255, 0.25);
 }
 
-.lp-login-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 4px;
+/* Forgot link */
+
+.gov-light-forgot {
+  border: none;
+  background: transparent;
+  padding: 0;
   font-size: 12px;
+  color: #2271c3;
+  text-align: left;
+  cursor: pointer;
+  margin-top: -4px;
 }
 
-.lp-login-remember {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #6b7280;
-}
+/* Login button */
 
-.lp-login-btn {
-  margin-top: 10px;
-  width: 100%;
-}
-
-.lp-login-footnote {
+.gov-light-login-btn {
   margin-top: 8px;
-  font-size: 11px;
-  color: #9ca3af;
+  background: #2b8cff;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* slightly adjust background variation for login (optional) */
-.lp-right-login {
-  background: #4d1d8a;
+.gov-light-login-btn:hover {
+  background: #1f6fcc;
 }
+
+/* Footer text */
+
+.gov-light-footer {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #5a5f68;
+}
+
+.gov-light-link {
+  color: #2271c3;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 840px) {
+  .gov-light-login-card {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+
+  .gov-light-left {
+    height: 230px;
+  }
+
+  .gov-light-left-text h2 {
+    font-size: 22px;
+  }
+}
+/* DARK GRADIENT OVERLAY BEHIND TEXT */
+.gov-light-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.35)
+  );
+  z-index: 1;
+}
+
+/* TEXT ABOVE OVERLAY */
+.gov-light-left-text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 20px;
+  color: #ffffff;
+  z-index: 2; /* bring text above image + overlay */
+}
+
+/* IMPROVED, HIGH-VISIBILITY TEXT STYLE */
+.gov-light-left-text h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.gov-light-left-text p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #e9ecef;
+  line-height: 1.4;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.45);
+  font-weight: 500;
+}
+
 
 
