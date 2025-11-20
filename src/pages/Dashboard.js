@@ -2,118 +2,184 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div>
-      <div className="dashboard-hero card">
+    <div className="dashboard-page">
+
+      {/* Header */}
+      <header className="dashboard-hero card flex-between">
         <div>
           <h1 className="page-title">Dashboard</h1>
           <p className="page-subtitle">
-            Overview of tourists, vendors, SOS alerts and key tourism metrics.
+            Complete overview of tourism, vendors, SOS alerts & system insights.
           </p>
         </div>
-        <div style={{display:'flex', gap:12}}>
+        <div className="flex gap-12">
           <button className="primary-btn">New Report</button>
           <button className="outline-btn">Manage Alerts</button>
         </div>
-      </div>
+      </header>
 
-      {/* Top KPI cards */}
-      <div className="grid grid-4">
+      {/* KPI Grid */}
+      <section className="grid grid-4 mt-24">
+        
         <div className="card kpi-card">
-          <div className="kpi-label">Total Tourists</div>
+          <div className="kpi-label">Total Tourists Registered</div>
           <div className="kpi-value">12,430</div>
           <div className="kpi-meta">
-            <span className="kpi-pill kpi-pill-success">14% vs previous month</span>
+            <span className="kpi-pill kpi-pill-success">+14%</span>
             <span>Last 30 days</span>
           </div>
         </div>
+
         <div className="card kpi-card">
-          <div className="kpi-label">Verified Vendors and Homestays</div>
+          <div className="kpi-label">Active Guides / Vendors</div>
           <div className="kpi-value">286</div>
           <div className="kpi-meta">
-            <span className="kpi-pill kpi-pill-success">32 new this month</span>
-            <span>DNK verified</span>
+            <span className="kpi-pill kpi-pill-success">32 new</span>
+            <span>DNK Verified</span>
           </div>
         </div>
+
         <div className="card kpi-card">
-          <div className="kpi-label">Active Eco-Trails</div>
-          <div className="kpi-value">39</div>
+          <div className="kpi-label">Pending Verifications</div>
+          <div className="kpi-value">18</div>
           <div className="kpi-meta">
-            <span>Across 11 districts</span>
-            <span>3 trails under review</span>
+            <span>Guides + Vendors</span>
+            <span className="kpi-pill kpi-pill-warning">Action required</span>
           </div>
         </div>
+
         <div className="card kpi-card">
-          <div className="kpi-label">Open SOS Alerts</div>
+          <div className="kpi-label">Today's SOS Alerts</div>
           <div className="kpi-value kpi-danger">3</div>
           <div className="kpi-meta">
-            <span className="kpi-pill kpi-pill-warning">2 high priority</span>
-            <button className="outline-btn small">Live safety view</button>
+            <span className="kpi-pill kpi-pill-danger">2 high priority</span>
+            <button className="outline-btn small">Live view</button>
           </div>
         </div>
-      </div>
 
-      {/* Charts row */}
-      <div className="grid grid-2 mt-24">
+      </section>
+
+      {/* Charts */}
+      <section className="grid grid-2 mt-24">
+
         <div className="card chart-card">
-          <div className="card-header">
+          <div className="card-header flex-between">
             <div>
-              <h3>Tourist Footfall by District (Last 90 Days)</h3>
+              <h3>Tourist Footfall (Last 90 Days)</h3>
               <p className="card-subtitle">
-                Placeholder for bar or line chart. Shows which districts are
-                driving tourism and eco trail usage.
+                District-level trends and season insights.
               </p>
             </div>
             <button className="chip">Rolling 90 days</button>
           </div>
-          <div className="chart-placeholder">
-            Chart integration area
-          </div>
+          <div className="chart-placeholder">Chart integration area</div>
         </div>
-        <div className="card chart-card">
-          <div className="card-header">
-            <div>
-              <h3>Top Destinations by Bookings</h3>
-              <p className="card-subtitle">
-                Helps plan infrastructure, safety and promotion budgets.
-              </p>
-            </div>
-            <button className="chip">This month</button>
-          </div>
-          <ul className="rank-list">
-            <li>
-              <span>1</span> Netarhat
-            </li>
-            <li>
-              <span>2</span> Betla
-            </li>
-            <li>
-              <span>3</span> Dassam Falls
-            </li>
-            <li>
-              <span>4</span> Hundru
-            </li>
-            <li>
-              <span>5</span> Deoghar
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      {/* SOS and Approvals */}
-      <div className="grid grid-2 mt-24">
+        <div className="card chart-card">
+          <div className="card-header flex-between">
+            <div>
+              <h3>Most Visited Destinations</h3>
+              <p className="card-subtitle">Today / Week / Month</p>
+            </div>
+            <button className="chip">This Month</button>
+          </div>
+
+          <div
+            className="dest-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: 12,
+              alignItems: "start",
+            }}
+          >
+            <div className="dest-card">
+              <img
+                src="/images/netarhat.jpg"
+                alt="Netarhat"
+                className="dest-thumb"
+                style={{ width: "100%", height: "auto", borderRadius: 8 }}
+              />
+              <div className="dest-caption">
+                <div><span className="rank-pos">1</span> <strong>Netarhat</strong></div>
+                <div className="muted">412 visits</div>
+              </div>
+            </div>
+
+            <div className="dest-card">
+              <img
+                src="/images/betla.jpg"
+                alt="Betla National Park"
+                className="dest-thumb"
+                style={{ width: "100%", height: "auto", borderRadius: 8 }}
+              />
+              <div className="dest-caption">
+                <div><span className="rank-pos">2</span> <strong>Betla</strong></div>
+                <div className="muted">298 visits</div>
+              </div>
+            </div>
+
+            <div className="dest-card">
+              <img
+                src="public/logo192.png"
+                alt="Dassam Falls"
+                className="dest-thumb"
+                style={{ width: "100%", height: "auto", borderRadius: 8 }}
+              />
+              <div className="dest-caption">
+                <div><span className="rank-pos">3</span> <strong>Dassam Falls</strong></div>
+                <div className="muted">220 visits</div>
+              </div>
+            </div>
+
+            <div className="dest-card">
+              <img
+                src="/images/hundru.jpg"
+                alt="Hundru"
+                className="dest-thumb"
+                style={{ width: "100%", height: "auto", borderRadius: 8 }}
+              />
+              <div className="dest-caption">
+                <div><span className="rank-pos">4</span> <strong>Hundru</strong></div>
+                <div className="muted">160 visits</div>
+              </div>
+            </div>
+
+            <div
+              className="dest-card"
+              style={{ gridColumn: "1 / -1", justifySelf: "center", maxWidth: 460 }}
+            >
+              <img
+                src="/images/deoghar.jpg"
+                alt="Deoghar"
+                className="dest-thumb"
+                style={{ width: "100%", height: "auto", borderRadius: 8 }}
+              />
+              <div className="dest-caption">
+                <div><span className="rank-pos">5</span> <strong>Deoghar</strong></div>
+                <div className="muted">140 visits</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* SOS + Approvals */}
+      <section className="grid grid-2 mt-24">
+
+        {/* SOS Table */}
         <div className="card">
-          <div className="card-header">
-            <h3>Live SOS and Safety Alerts</h3>
+          <div className="card-header flex-between">
+            <h3>Live SOS & Safety Alerts</h3>
             <span className="chip neutral">Today</span>
           </div>
+
           <table className="data-table">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Tourist</th>
-                <th>Location</th>
-                <th>Priority</th>
-                <th>Status</th>
+                <th>ID</th><th>Tourist</th><th>Location</th>
+                <th>Priority</th><th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -142,19 +208,17 @@ const Dashboard = () => {
           </table>
         </div>
 
+        {/* Vendor Approvals */}
         <div className="card">
-          <div className="card-header">
-            <h3>Vendor and Homestay Approvals</h3>
-            <span className="chip neutral">Pending verification</span>
+          <div className="card-header flex-between">
+            <h3>Vendor & Homestay Approvals</h3>
+            <span className="chip neutral">Verification Pending</span>
           </div>
+
           <table className="data-table">
             <thead>
               <tr>
-                <th>Vendor</th>
-                <th>Type</th>
-                <th>District</th>
-                <th>DNK</th>
-                <th>Status</th>
+                <th>Vendor</th><th>Type</th><th>District</th><th>DNK</th><th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -167,7 +231,7 @@ const Dashboard = () => {
               </tr>
               <tr>
                 <td>Tribal Trails Jharkhand</td>
-                <td>Guide and Tour</td>
+                <td>Guide & Tour</td>
                 <td>Ranchi</td>
                 <td>No</td>
                 <td><button className="link-btn">Field visit</button></td>
@@ -182,20 +246,22 @@ const Dashboard = () => {
             </tbody>
           </table>
         </div>
-      </div>
 
-      {/* Quick actions */}
-      <div className="quick-actions mt-24">
+      </section>
+
+      {/* Quick Actions */}
+      <section className="quick-actions mt-24">
         <h3>Quick Actions</h3>
         <div className="quick-actions-row">
-          <button className="primary-btn ghost">Approve vendors</button>
-          <button className="primary-btn ghost">Approve guides</button>
-          <button className="primary-btn ghost">View SOS live map</button>
-          <button className="primary-btn ghost">Add event</button>
-          <button className="primary-btn ghost">Push travel advisory</button>
-          <button className="primary-btn ghost">Add destination</button>
+          <button className="primary-btn ghost">Approve Vendors</button>
+          <button className="primary-btn ghost">Approve Guides</button>
+          <button className="primary-btn ghost">View SOS Live Map</button>
+          <button className="primary-btn ghost">Add Event</button>
+          <button className="primary-btn ghost">Push Travel Advisory</button>
+          <button className="primary-btn ghost">Add Destination</button>
         </div>
-      </div>
+      </section>
+
     </div>
   );
 };
