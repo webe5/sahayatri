@@ -3,10 +3,18 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div>
-      <h1 className="page-title">Dashboard</h1>
-      <p className="page-subtitle">
-        Overview of tourists, vendors, SOS alerts and key tourism metrics.
-      </p>
+      <div className="dashboard-hero card">
+        <div>
+          <h1 className="page-title">Dashboard</h1>
+          <p className="page-subtitle">
+            Overview of tourists, vendors, SOS alerts and key tourism metrics.
+          </p>
+        </div>
+        <div style={{display:'flex', gap:12}}>
+          <button className="primary-btn">New Report</button>
+          <button className="outline-btn">Manage Alerts</button>
+        </div>
+      </div>
 
       {/* Top KPI cards */}
       <div className="grid grid-4">
